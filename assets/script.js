@@ -53,6 +53,7 @@ function resetSlideshow() {
   startSlideshow();
 }
 
+// Dot controls
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     showSlide(index);
@@ -60,6 +61,7 @@ dots.forEach((dot, index) => {
   });
 });
 
+// Pause while the pointer is over the slideshow
 const slideshow = document.querySelector(".slideshow");
 
 if (slideshow && slides.length) {
