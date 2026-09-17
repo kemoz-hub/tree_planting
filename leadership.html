@@ -1,0 +1,514 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Leadership | Tree Planting Initiative</title>
+
+  <meta name="description"
+        content="Meet the leadership team behind our tree planting and environmental conservation initiative.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f8f3;
+      color: #263a2a;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #1b5e20;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #c8e6c9;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 380px;
+      background:
+        linear-gradient(rgba(0, 70, 20, 0.65), rgba(0, 70, 20, 0.65)),
+        url("assets/leadership.jpg") center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Introduction */
+    .intro {
+      max-width: 1000px;
+      margin: 60px auto 30px;
+      padding: 0 25px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 34px;
+      color: #1b5e20;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 17px;
+      color: #555;
+    }
+
+    /* Leadership Cards */
+    .leadership-container {
+      max-width: 1150px;
+      margin: 40px auto 70px;
+      padding: 0 25px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .leader-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .leader-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .leader-content {
+      padding: 25px;
+    }
+
+    .leader-content h3 {
+      color: #1b5e20;
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .role {
+      color: #558b2f;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .leader-content p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* Responsibilities */
+    .responsibilities {
+      background: #e8f5e9;
+      padding: 70px 7%;
+      text-align: center;
+    }
+
+    .responsibilities h2 {
+      color: #1b5e20;
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    .responsibility-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .responsibility {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .responsibility .icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .responsibility h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .responsibility p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* Leadership Message */
+    .message {
+      max-width: 900px;
+      margin: 70px auto;
+      padding: 45px 30px;
+      text-align: center;
+      background: white;
+      border-left: 6px solid #2e7d32;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .message h2 {
+      color: #1b5e20;
+      margin-bottom: 18px;
+      font-size: 30px;
+    }
+
+    .message p {
+      font-size: 18px;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      background: #123d16;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .leadership-container,
+      .responsibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .leadership-container,
+      .responsibility-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 320px;
+      }
+
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🌳 Green Future</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html" class="active">Leadership</a>
+      <a href="activities.html">Activities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Leadership</h1>
+
+      <p>
+        Strong leadership inspires communities to plant, protect,
+        and preserve trees for a greener and healthier future.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Introduction -->
+  <section class="intro">
+    <h2>Leading the Green Movement</h2>
+
+    <p>
+      Our leadership team works with communities, schools, youth groups,
+      volunteers, and environmental partners to coordinate tree planting
+      and conservation activities. Through teamwork and responsible
+      leadership, we aim to create sustainable environmental change.
+    </p>
+  </section>
+
+
+  <!-- Leadership Team -->
+  <section class="leadership-container">
+
+    <div class="leader-card">
+      <img
+        src="assets/leader1.jpg"
+        alt="Project Coordinator"
+        class="leader-image"
+      >
+
+      <div class="leader-content">
+        <h3>Project Coordinator</h3>
+
+        <div class="role">
+          Project Leadership
+        </div>
+
+        <p>
+          Provides overall direction, coordinates tree-planting programs,
+          manages activities, and ensures that environmental goals are achieved.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="leader-card">
+      <img
+        src="assets/leader2.jpg"
+        alt="Community Leader"
+        class="leader-image"
+      >
+
+      <div class="leader-content">
+        <h3>Community Leader</h3>
+
+        <div class="role">
+          Community Mobilization
+        </div>
+
+        <p>
+          Works with local communities to encourage participation,
+          organize volunteers, and promote long-term environmental responsibility.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="leader-card">
+      <img
+        src="assets/leader3.jpg"
+        alt="Environmental Coordinator"
+        class="leader-image"
+      >
+
+      <div class="leader-content">
+        <h3>Environmental Coordinator</h3>
+
+        <div class="role">
+          Conservation & Education
+        </div>
+
+        <p>
+          Guides participants on proper tree planting, environmental
+          conservation, tree care, and sustainable land management.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Leadership Responsibilities -->
+  <section class="responsibilities">
+
+    <h2>Leadership Responsibilities</h2>
+
+    <div class="responsibility-grid">
+
+      <div class="responsibility">
+        <div class="icon">🌱</div>
+
+        <h3>Planting Coordination</h3>
+
+        <p>
+          Organizing planting activities and ensuring that teams have
+          the resources and guidance required.
+        </p>
+      </div>
+
+
+      <div class="responsibility">
+        <div class="icon">👥</div>
+
+        <h3>Community Mobilization</h3>
+
+        <p>
+          Bringing together community members, volunteers, schools,
+          and organizations to participate in tree planting.
+        </p>
+      </div>
+
+
+      <div class="responsibility">
+        <div class="icon">📚</div>
+
+        <h3>Environmental Education</h3>
+
+        <p>
+          Educating participants about the importance of trees,
+          biodiversity, climate, and environmental conservation.
+        </p>
+      </div>
+
+
+      <div class="responsibility">
+        <div class="icon">🌳</div>
+
+        <h3>Tree Care</h3>
+
+        <p>
+          Supporting teams in watering, protecting, monitoring,
+          and maintaining planted trees.
+        </p>
+      </div>
+
+
+      <div class="responsibility">
+        <div class="icon">📊</div>
+
+        <h3>Monitoring</h3>
+
+        <p>
+          Tracking planting activities, tree survival, community
+          participation, and conservation progress.
+        </p>
+      </div>
+
+
+      <div class="responsibility">
+        <div class="icon">🤝</div>
+
+        <h3>Partnerships</h3>
+
+        <p>
+          Building partnerships with schools, communities,
+          organizations, and environmental stakeholders.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Leadership Message -->
+  <section class="message">
+
+    <h2>Leadership for a Greener Future</h2>
+
+    <p>
+      "Every tree we plant represents a commitment to our environment.
+      Through responsible leadership, teamwork, and community action,
+      we can create a greener future for generations to come."
+    </p>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      &copy; 2026 Green Future Tree Planting Initiative.
+      All Rights Reserved.
+    </p>
+
+    <p>
+      Plant Today • Protect Tomorrow • Grow Together 🌱
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
