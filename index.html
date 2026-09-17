@@ -581,6 +581,77 @@
   <a class="btn btn-light" href="partnership.html#join">Get Involved</a>
 </section>
 
+<section class="partnership-gallery section" aria-labelledby="partnership-gallery-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow green">OUR PARTNERS</p>
+      <h2 id="partnership-gallery-title">Growing stronger together.</h2>
+    </div>
+    <p>Meet the organizations helping us create a greener future.</p>
+  </div>
+
+  <div class="partnership-gallery-scroll" tabindex="0" aria-label="Scrollable gallery of partnership organizations">
+    <figure class="partnership-card">
+      <img src="assets/part3.jpeg" alt="Tree Planting partnership organization">
+    </figure>
+    <figure class="partnership-card">
+      <img src="assets/part2.jpeg" alt="Tree Planting partnership organization">
+    </figure>
+    <figure class="partnership-card">
+      <img src="assets/part4.jpeg" alt="Tree Planting partnership organization">
+    </figure>
+  </div>
+</section>
+
+<style>
+  .partnership-gallery {
+    background: #f1f8f3;
+  }
+
+  .partnership-gallery-scroll {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 0.5rem 0 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #198754 #dceee1;
+  }
+
+  .partnership-gallery-scroll:focus-visible {
+    outline: 3px solid #198754;
+    outline-offset: 4px;
+  }
+
+  .partnership-card {
+    flex: 0 0 clamp(260px, 42vw, 440px);
+    height: 280px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #ddd;
+    scroll-snap-align: start;
+  }
+
+  .partnership-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .partnership-card:hover img {
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 600px) {
+    .partnership-card {
+      flex-basis: 82vw;
+      height: 230px;
+    }
+  }
+</style>
+
 </main>
 
 <footer class="footer">
